@@ -1,9 +1,8 @@
-# @alienfast/i18next-loader
+# @jsapp/i18next-loader
 
-[![CircleCI](https://circleci.com/gh/alienfast/i18next-loader/tree/develop.svg?style=svg&circle-token=9de60bf76b13f269bb560cd89ea253c9c04238ce)](https://circleci.com/gh/alienfast/i18next-loader/tree/develop)
-[![npm version](https://badge.fury.io/js/%40alienfast%2Fi18next-loader.svg)](https://badge.fury.io/js/%40alienfast%2Fi18next-loader)
+[![npm version](https://badge.fury.io/js/%40jsapp%2Fi18next-loader.svg)](https://badge.fury.io/js/%40jsapp%2Fi18next-loader)
 
-`yarn add -D @alienfast/i18next-loader`
+`yarn add -D @jsapp/i18next-loader`
 
 This webpack loader generates the `resources` structure necessary for [i18next](https://github.com/i18next/i18next).  The structure is webpacked with the client bundle at build time, thus avoiding loading any language resources via extra HTTP requests.
 
@@ -47,7 +46,7 @@ module.exports = {
     rules: [
       {
         test: /locales/,
-        loader: '@alienfast/i18next-loader',
+        loader: '@jsapp/i18next-loader',
         // options here
         //query: { overrides: [ '../node_modules/lib/locales' ] }
       }
@@ -75,7 +74,7 @@ i18n.t('key')
 ```javascript
 // File: app.js
 import i18n from 'i18next'
-import resources from '@alienfast/i18next-loader!../locales/index.js'
+import resources from '@jsapp/i18next-loader!../locales/index.js'
 
 i18n.init({
   resources
